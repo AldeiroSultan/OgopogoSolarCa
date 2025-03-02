@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ogopogo Solar - Our Projects</title>
+    <!--Shared CSS-->
+    <link rel="stylesheet" href="css/style.css">
+    <!--Page specific CSS-->
+    <link rel="stylesheet" href="css/projects.css">
+    <!--Fonts-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="img/logo.png" alt="Ogopogo Solar Logo">
+                    <span>Ogopogo Solar</span>
+                </div>
+                
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="projects.html" class="active">Projects</a></li>
+                        <li><a href="sponsors.html">Sponsors</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="join.html">Join Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!--Mobile Menu-->
+    <div class="mobile-menu">
+        <button class="mobile-menu-close">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="sponsors.html">Sponsors</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="join.html">Join Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <!--Main-->
+    <main>
+        <!--Page Banner-->
+        <section class="page-banner">
+            <div class="container">
+                <h1>Our Projects</h1>
+                <p>Explore our current and past projects.</p>
+            </div>
+        </section>
+
+        <!--Projects Introduction-->
+        <section class="projects-intro fade-in-section">
+            <div class="container">
+                <p class="intro-text">Each design represents countless hours of innovation, problem-solving, and collaboration. Our projects push the boundaries of solar vehicle technology while providing hands-on learning experiences for our team members.</p>
+            </div>
+        </section>
+
+        <!--Projects Filter-->
+        <section class="projects-filter fade-in-section">
+            <div class="container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="current">Current</button>
+                    <button class="filter-btn" data-filter="past">Past</button>
+                    <button class="filter-btn" data-filter="concept">Concept</button>
+                </div>
+            </div>
+        </section>
+
+        <!--Current Project-->
+        <section class="featured-project fade-in-section" data-category="current">
+            <div class="container">
+                <div class="featured-project-content">
+                    <div class="project-image">
+                        <img src="img/project-x.jpg" alt="Prototype 1 Car">
+                        <div class="project-status current">Current Car</div>
+                    </div>
+                    <div class="project-details">
+                        <h2>Car 1</h2>
+                        <p class="project-description">Yap about the car.</p>
+                        
+                        <h3>Key Features</h3>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> <span>Feature 1</span></li>
+                            <li><i class="fas fa-check"></i> <span>Feature 2</span></li>
+                            <li><i class="fas fa-check"></i> <span>Feature 3</span></li>
+                            <li><i class="fas fa-check"></i> <span>Feature 4</span></li>
+                            <li><i class="fas fa-check"></i> <span>Feature 5</span></li>
+                        </ul>
+                        
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <span class="meta-label">Status:</span>
+                                <span class="meta-value">Under Development</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Started:</span>
+                                <span class="meta-value">2024</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Target Completion:</span>
+                                <span class="meta-value">2026</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Project Grid-->
+        <section class="projects-grid fade-in-section">
+            <div class="container">
+                <!--Project Card 1-->
+                <div class="project-card" data-category="past">
+                    <div class="project-image">
+                        <img src="img/prototype2.jpg" alt="Car 2">
+                        <div class="project-status past">Previous Generation</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Old car</h3>
+                        <p>Yap.</p>
+                        <ul class="feature-list-mini">
+                            <li><i class="fas fa-check"></i> yap</li>
+                            <li><i class="fas fa-check"></i> yap</li>
+                            <li><i class="fas fa-check"></i> yap</li>
+                        </ul>
+                        <a href="#" class="read-more">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Project Card 2 -->
+                <div class="project-card" data-category="concept">
+                    <div class="project-image">
+                        <img src="img/future.jpg" alt="Future Concept">
+                        <div class="project-status concept">Future Concept</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Future Concept</h3>
+                        <p>Longer yap.</p>
+                        <ul class="feature-list-mini">
+                            <li><i class="fas fa-check"></i> <span>yap</span></li>
+                            <li><i class="fas fa-check"></i> <span>yap</span></li>
+                            <li><i class="fas fa-check"></i> <span>yap</span></li>
+                        </ul>
+                        <a href="#" class="read-more">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Project Card 3 -->
+                <div class="project-card" data-category="current">
+                    <div class="project-image">
+                        <img src="img/powerhub.jpg" alt="PowerHub">
+                        <div class="project-status current">Research Project</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Research</h3>
+                        <p>Longer yap</p>
+                        <ul class="feature-list-mini">
+                            <li><i class="fas fa-check"></i> <span>yap</span></li>
+                            <li><i class="fas fa-check"></i> <span>yap</span></li>
+                            <li><i class="fas fa-check"></i> <span>yap</span></li>
+                        </ul>
+                        <a href="#" class="read-more">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+                
+
+        <!--Technical Innovations-->
+        <section class="innovations-section fade-in-section">
+            <div class="container">
+                <h2 class="section-title">Our Innovations</h2>
+                <p class="section-intro">Beyond building complete vehicles, our team develops specific technologies that advance solar mobility. Here are some of our key innovations:</p>
+                
+                <div class="innovations-grid">
+                    <div class="innovation-card">
+                        <div class="innovation-icon">
+                            <i class="fas fa-solar-panel"></i>
+                        </div>
+                        <h3>Advanced Solar Array</h3>
+                        <p>Custom arrangement of high-efficiency cells that optimizes power generation across different angles and light conditions.</p>
+                    </div>
+                    
+                    <div class="innovation-card">
+                        <div class="innovation-icon">
+                            <i class="fas fa-battery-full"></i>
+                        </div>
+                        <h3>Battery Management</h3>
+                        <p>Proprietary system that maximizes battery life and performance while ensuring safe operation in racing conditions.</p>
+                    </div>
+                    
+                    <div class="innovation-card">
+                        <div class="innovation-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <h3>Telemetry Platform</h3>
+                        <p>Real-time data collection and analysis system providing crucial performance metrics to our race strategy team.</p>
+                    </div>
+                    
+                    <div class="innovation-card">
+                        <div class="innovation-icon">
+                            <i class="fas fa-wind"></i>
+                        </div>
+                        <h3>Aerodynamic Design</h3>
+                        <p>Computer-optimized shapes that minimize drag while maintaining stability across various weather conditions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--CTA Section-->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Want to support our projects?</h2>
+                <p>We're always looking for sponsors and partners to help turn our innovative designs into reality.</p>
+                <div class="cta-buttons">
+                    <a href="sponsors.html" class="btn btn-primary">Become a Sponsor</a>
+                    <a href="join.html" class="btn btn-outline">Join Our Team</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--Footer-->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="img/logo.png" alt="Ogopogo Solar Club Logo">
+                    <p>Driven by Curiosity, Powered by the Sun.</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; <span id="current-year"></span> Ogopogo Solar. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!--Shared JavaScript-->
+    <script src="js/main.js"></script>
+    <!--Page specific JavaScript-->
+    <script src="js/projects.js"></script>
+</body>
+</html>

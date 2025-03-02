@@ -1,0 +1,408 @@
+/* 
+Styling for projects page
+*/
+
+/* Page Banner */
+.page-banner {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 120px 0 60px;
+    text-align: center;
+}
+
+.page-banner h1 {
+    font-size: var(--font-xl);
+    margin-bottom: var(--spacing-sm);
+}
+
+.page-banner p {
+    font-size: var(--font-md);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Projects Introduction */
+.projects-intro {
+    background-color: var(--background-white);
+    padding: var(--spacing-lg) 0;
+    text-align: center;
+}
+
+.intro-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: var(--font-md);
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+/* Projects Filter */
+.projects-filter {
+    background-color: var(--background-light);
+    padding: var(--spacing-md) 0;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    background: none;
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius-sm);
+    color: var(--primary-color);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Featured Project */
+.featured-project {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--background-white);
+}
+
+.featured-project-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+@media (min-width: 992px) {
+    .featured-project-content {
+        flex-direction: row;
+    }
+    
+    .project-image {
+        flex: 1;
+    }
+    
+    .project-details {
+        flex: 1;
+    }
+}
+
+.project-image {
+    position: relative;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.project-status {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-sm);
+    font-weight: 600;
+    font-size: var(--font-xs);
+    text-transform: uppercase;
+}
+
+.project-status.current {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.project-status.past {
+    background-color: #2196F3;
+    color: white;
+}
+
+.project-status.concept {
+    background-color: #FF9800;
+    color: white;
+}
+
+.project-details h2 {
+    font-size: var(--font-lg);
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-color);
+}
+
+.project-description {
+    color: var(--text-light);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.7;
+}
+
+.feature-list {
+    margin-bottom: var(--spacing-md);
+    padding-left: 0;
+    list-style: none;
+}
+
+.feature-list li {
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.feature-list li i {
+    color: var(--primary-color);
+    margin-right: 0.75rem;
+    margin-top: 0.25rem;
+    flex-shrink: 0;
+}
+
+.feature-list li span {
+    flex-grow: 1;
+}
+
+.project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    background-color: var(--background-light);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+}
+
+.meta-label {
+    font-weight: 600;
+    margin-right: 0.5rem;
+    color: var(--text-dark);
+}
+
+.meta-value {
+    color: var(--text-light);
+}
+
+/* Projects Grid */
+.projects-grid {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--background-light);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.project-card {
+    background-color: var(--background-white);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.project-content {
+    padding: var(--spacing-md);
+}
+
+.project-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-color);
+}
+
+.project-content p {
+    color: var(--text-light);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+}
+
+.feature-list-mini {
+    margin-bottom: var(--spacing-sm);
+    padding-left: 0;
+    list-style: none;
+}
+
+.feature-list-mini li {
+    margin-bottom: 0.4rem;
+    display: flex;
+    align-items: flex-start;
+    font-size: var(--font-xs);
+    color: var(--text-light);
+}
+
+.feature-list-mini li i {
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    flex-shrink: 0;
+}
+
+.feature-list-mini li span {
+    flex-grow: 1;
+}
+
+.read-more {
+    display: inline-block;
+    font-weight: 600;
+    color: var(--primary-color);
+    transition: all var(--transition-speed) ease;
+}
+
+.read-more:hover {
+    color: var(--primary-dark);
+}
+
+.read-more i {
+    margin-left: 0.5rem;
+    transition: transform var(--transition-speed) ease;
+}
+
+.read-more:hover i {
+    transform: translateX(3px);
+}
+
+/* Innovations Section */
+.innovations-section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--background-white);
+}
+
+.section-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-lg);
+    color: var(--text-light);
+}
+
+.innovations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.innovation-card {
+    text-align: center;
+    padding: var(--spacing-md);
+    background-color: var(--background-light);
+    border-radius: var(--border-radius-md);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.innovation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.innovation-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.innovation-card h3 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.innovation-card p {
+    color: var(--text-light);
+}
+
+/* CTA Section */
+.cta-section {
+    background-color: var(--primary-color);
+    color: white;
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: var(--font-lg);
+    margin-bottom: var(--spacing-sm);
+}
+
+.cta-section p {
+    max-width: 600px;
+    margin: 0 auto var(--spacing-lg);
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.cta-section .btn-primary {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.cta-section .btn-primary:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.cta-section .btn-outline {
+    border-color: white;
+    color: white;
+}
+
+.cta-section .btn-outline:hover {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+/* Animation for fade-in sections */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hide projects not matching the current filter */
+.project-card.hidden {
+    display: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .project-meta {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .innovations-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .filter-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .filter-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}

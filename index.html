@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ogopogo Solar Website</title>
+    <!--Google Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <!--Shared CSS-->
+    <link rel="stylesheet" href="css/style.css">
+    <!--Page specific CSS-->
+    <link rel="stylesheet" href="css/home.css">
+    <!--Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <!--Header-->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="img/logo.png" alt="Ogopogo Solar logo">
+                    <span>Ogopogo Solar</span>
+                </div>
+                
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="sponsors.html">Sponsors</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="join.html">Join Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!--Mobile Menu-->
+    <div class="mobile-menu">
+        <button class="mobile-menu-close">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="sponsors.html">Sponsors</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="join.html">Join Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <!--Main-->
+    <main>
+        <!--Video Background-->
+        <section class="hero-video">
+            <div class="video-container">
+                <!--The Video-->
+                <video class="video-bg" autoplay muted loop>
+                    <source src="video/solar-car.mp4" type="video/mp4">
+                    <!--Just in case the video doesnt work-->
+                    <img src="img/hero-bg.jpg" alt="ImageFallback">
+                </video>
+                <div class="overlay">
+                    <h1>Ogopogo Solar</h1>
+                    <p>Driven by Curiosity, Powered by The Sun</p>
+                    <a href="about.html" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Join Us Section -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Our Vision</h2>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Innovation</h3>
+                        <p>Design and build a solar-powered car to compete in the American Solar Challenge and the Formula Sun Grand Prix.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Community</h3>
+                        <p>We are a group of students from various disciplines who are passionate about sustainability and renewable energy.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3>Goals</h3>
+                        <p>We are dedicated to promoting sustainable transportation and inspiring the next generation of engineers and innovators.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Updates Section -->
+        <section class="latest-updates">
+            <div class="container">
+                <h2 class="section-title">Latest Updates</h2>
+                
+                <div class="updates-grid">
+                    <div class="update-card">
+                        <img src="img/update-1.jpg" alt="Website Launch">
+                        <div class="update-content">
+                            <h3>Website Launch</h3>
+                            <p>Our website has a new look!</p>
+                            <a href="#" class="read-more">Read more &rarr;</a>
+                        </div>
+                    </div>
+                    
+                    <div class="update-card">
+                        <img src="img/update-2.jpg" alt="Workshops">
+                        <div class="update-content">
+                            <h3>Solidwork Workshops</h3>
+                            <p>Join our Solidwork Workshops happening this week !</p>
+                            <a href="#" class="read-more">Read more &rarr;</a>
+                        </div>
+                    </div>
+                    
+                    <div class="update-card">
+                        <img src="img/update-3.jpg" alt="Upcoming">
+                        <div class="update-content">
+                            <h3>Upcoming News</h3>
+                            <p>To be announced...</p>
+                            <a href="#" class="read-more">Read more &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--Footer-->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="img/logo.png" alt="OgopogoSolar Logo">
+                    <p>Driven by Curiosity, Powered by the Sun.</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; <span id="current-year"></span> Ogopogo Solar. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!--Shared JavaScript-->
+    <script src="js/main.js"></script>
+    <!--Page specific JavaScript-->
+    <script src="js/home.js"></script>
+</body>
+</html>
