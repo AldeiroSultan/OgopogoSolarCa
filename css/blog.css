@@ -2,23 +2,80 @@
 Styling for blog page
 */
 
-/* Page Banner */
+/* Enhanced Page Banner with Image Background */
 .page-banner {
-    background-color: var(--primary-color);
+    position: relative;
     color: white;
     padding: 120px 0 60px;
     text-align: center;
+    overflow: hidden;
+    z-index: 1;
+    background-image: url('../img/blog-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: darkgreen;
 }
 
+/* Dark overlay for better text readability */
+.page-banner::before {
+    display: none;
+}
+
+/* Remove pattern overlay from page banner */
+.page-banner::after {
+    display: none;
+}
+
+/* Enhanced Typography for Banner Title */
 .page-banner h1 {
     font-size: var(--font-xl);
     margin-bottom: var(--spacing-sm);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    position: relative;
+    display: inline-block;
+    animation: blogTitleAnimation 1s ease-out;
 }
 
+/* Animated underline for page title */
+.page-banner h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-color), var(--primary-light));
+    border-radius: 2px;
+    animation: underlineExpand 1.2s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+/* Subtitle animation */
 .page-banner p {
     font-size: var(--font-md);
     max-width: 700px;
     margin: 0 auto;
+    opacity: 0;
+    animation: subtitleFadeIn 1s ease-out forwards;
+    animation-delay: 0.8s;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Animation Keyframes */
+@keyframes blogTitleAnimation {
+    from { transform: rotate(-5deg) scale(0.8); opacity: 0; }
+    to { transform: rotate(0) scale(1); opacity: 1; }
+}
+
+@keyframes underlineExpand {
+    from { width: 0; }
+    to { width: 80px; }
+}
+
+@keyframes subtitleFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Blog Content */
@@ -43,7 +100,7 @@ Styling for blog page
 
 /* Blog Post */
 .blog-post {
-    background-color: var(--background-white);
+    background-color: white;
     border-radius: var(--border-radius-md);
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -193,7 +250,7 @@ Styling for blog page
 }
 
 .sidebar-widget {
-    background-color: var(--background-white);
+    background-color: white;
     border-radius: var(--border-radius-md);
     padding: var(--spacing-md);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);

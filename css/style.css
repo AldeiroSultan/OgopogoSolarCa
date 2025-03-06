@@ -28,6 +28,7 @@ Shared style for the entire website - Updated with enhanced visuals and animatio
     --success-color: #43a047;
     --error-color: #e53935;
     
+    
     /* Font sizes */
     --font-xl: 3.5rem;
     --font-lg: 2.5rem;
@@ -182,15 +183,15 @@ p {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Header with glass effect and improved animations */
+/* Header with glassmorphism effect */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 2px 15px var(--header-shadow);
     z-index: 1000;
     transition: all var(--transition-speed) ease;
@@ -198,7 +199,7 @@ p {
 
 .header.scrolled {
     padding: 5px 0;
-    background-color: rgba(255, 255, 255, 0.98);
+    background-color: rgba(255, 255, 255, 0.85);
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.12);
 }
 
@@ -245,9 +246,10 @@ p {
 
 .main-nav a {
     color: var(--text-dark);
-    font-weight: 600;
+    font-weight: 700; /* Increased from 600 to 700 for better visibility */
     position: relative;
     padding: 8px 4px;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5); /* Light text shadow for better contrast */
 }
 
 .main-nav a:hover {
@@ -376,6 +378,37 @@ p {
 
 .mobile-menu a.active {
     border-left: 4px solid var(--primary-color);
+}
+
+/* Page Banner Styling - UPDATED TO REMOVE BLUR */
+.page-banner {
+    position: relative;
+    color: white;
+    padding: 120px 0 60px;
+    text-align: center;
+    overflow: hidden;
+    z-index: 1;
+    background-size: cover;
+    background-position: center;
+
+}
+
+
+
+/* Banner text styling */
+.page-banner h1 {
+    font-size: var(--font-xl);
+    margin-bottom: var(--spacing-sm);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: inline-block;
+}
+
+.page-banner p {
+    font-size: var(--font-md);
+    max-width: 700px;
+    margin: 0 auto;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Enhanced Footer */
