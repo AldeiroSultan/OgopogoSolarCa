@@ -5,15 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ogopogo Solar Website</title>
     <!--Google Fonts-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
     <!--Shared CSS-->
     <link rel="stylesheet" href="css/style.css">
     <!--Page specific CSS-->
     <link rel="stylesheet" href="css/home.css">
     <!--Icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Preloader -->
+    <style>
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .preloader-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(46, 125, 50, 0.2);
+            border-top: 5px solid #2e7d32;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-spinner"></div>
+    </div>
+
     <!--Header-->
     <header class="header">
         <div class="container">
@@ -62,88 +97,184 @@
 
     <!--Main-->
     <main>
-        <!--Video Background-->
-        <section class="hero-video">
+        <!--Video Background with Particles-->
+        <section class="hero-video" id="home">
             <div class="video-container">
                 <!--The Video-->
-                <video class="video-bg" autoplay muted loop>
+                <video class="video-bg" autoplay muted loop playsinline>
                     <source src="video/solar-car.mp4" type="video/mp4">
-                    <!--Just in case the video doesnt work-->
+                    <!--Fallback-->
                     <img src="img/hero-bg.jpg" alt="ImageFallback">
                 </video>
+                
+                <!-- Particles container will be added by JavaScript -->
+                <div class="particles">
+                    <!-- Particles will be added dynamically -->
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                </div>
+                
                 <div class="overlay">
                     <h1>Ogopogo Solar</h1>
                     <p>Driven by Curiosity, Powered by The Sun</p>
-                    <a href="about.html" class="btn btn-primary">Learn More</a>
+                    <a href="about.html" class="btn">Discover Our Journey</a>
+                </div>
+                
+                <!-- Scroll indicator -->
+                <div class="scroll-indicator">
+                    <div class="mouse">
+                        <div class="wheel"></div>
+                    </div>
+                    <span>Scroll Down</span>
                 </div>
             </div>
         </section>
 
-        <!-- Why Join Us Section -->
-        <section class="features">
+        <!-- Section divider with wave -->
+        <div class="section-divider">
+            <div class="divider-wave"></div>
+        </div>
+
+        <!-- Our Vision Section -->
+        <section class="features" id="vision">
             <div class="container">
                 <h2 class="section-title">Our Vision</h2>
                 
                 <div class="features-grid">
-                    <div class="feature-card">
+                    <div class="feature-card fade-in-section">
                         <div class="feature-icon">
                             <i class="fas fa-lightbulb"></i>
                         </div>
                         <h3>Innovation</h3>
-                        <p>Design and build a solar-powered car to compete in the American Solar Challenge and the Formula Sun Grand Prix.</p>
+                        <p>Design and build a solar-powered car to compete in the American Solar Challenge and the Formula Sun Grand Prix, pushing the boundaries of sustainable transportation technology.</p>
                     </div>
                     
-                    <div class="feature-card">
+                    <div class="feature-card fade-in-section">
                         <div class="feature-icon">
                             <i class="fas fa-users"></i>
                         </div>
                         <h3>Community</h3>
-                        <p>We are a group of students from various disciplines who are passionate about sustainability and renewable energy.</p>
+                        <p>We are a diverse community of students from various disciplines who are passionate about sustainability, renewable energy, and creating a cleaner future for generations to come.</p>
                     </div>
                     
-                    <div class="feature-card">
+                    <div class="feature-card fade-in-section">
                         <div class="feature-icon">
                             <i class="fas fa-award"></i>
                         </div>
-                        <h3>Goals</h3>
-                        <p>We are dedicated to promoting sustainable transportation and inspiring the next generation of engineers and innovators.</p>
+                        <h3>Excellence</h3>
+                        <p>We are dedicated to promoting sustainable transportation and inspiring the next generation of engineers and innovators through educational outreach and competitive success.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Latest Updates Section -->
-        <section class="latest-updates">
+        <section class="latest-updates accent-bg" id="updates">
+            <div class="bg-pattern"></div>
             <div class="container">
                 <h2 class="section-title">Latest Updates</h2>
                 
                 <div class="updates-grid">
-                    <div class="update-card">
+                    <div class="update-card fade-in-section">
                         <img src="img/update-1.jpg" alt="Website Launch">
                         <div class="update-content">
                             <h3>Website Launch</h3>
-                            <p>Our website has a new look!</p>
+                            <p>We're excited to unveil our brand new website, designed to showcase our team's progress, achievements, and future goals. Stay tuned for regular updates on our journey!</p>
                             <a href="#" class="read-more">Read more &rarr;</a>
                         </div>
                     </div>
                     
-                    <div class="update-card">
+                    <div class="update-card fade-in-section">
                         <img src="img/update-2.jpg" alt="Workshops">
                         <div class="update-content">
-                            <h3>Solidwork Workshops</h3>
-                            <p>Join our Solidwork Workshops happening this week !</p>
+                            <h3>SolidWorks Workshops</h3>
+                            <p>Join our SolidWorks Workshops happening this week! Learn essential 3D modeling skills that are crucial for designing components for our solar car. Open to all skill levels.</p>
                             <a href="#" class="read-more">Read more &rarr;</a>
                         </div>
                     </div>
                     
-                    <div class="update-card">
+                    <div class="update-card fade-in-section">
                         <img src="img/update-3.jpg" alt="Upcoming">
                         <div class="update-content">
-                            <h3>Upcoming News</h3>
-                            <p>To be announced...</p>
-                            <a href="#" class="read-more">Read more &rarr;</a>
+                            <h3>Recruitment Drive</h3>
+                            <p>We're looking for passionate students to join our team! Whether you're interested in engineering, business, or design, there's a place for you in our solar car project.</p>
+                            <a href="join.html" class="read-more">Apply Now &rarr;</a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Showcase Section (New) -->
+        <section class="showcase-section" id="showcase">
+            <div class="container">
+                <h2 class="section-title">What We Do</h2>
+                
+                <div class="showcase-content">
+                    <div class="showcase-image fade-in-section">
+                        <img src="img/showcase-car.jpg" alt="Our Solar Car">
+                    </div>
+                    <div class="showcase-text fade-in-section">
+                        <h3>Building Tomorrow's Transportation</h3>
+                        <p>At Ogopogo Solar, we design, build, and race solar-powered vehicles that demonstrate the potential of renewable energy technology. Our interdisciplinary team works together to overcome engineering challenges and push the boundaries of sustainable transportation.</p>
+                        <ul class="showcase-features">
+                            <li><i class="fas fa-check-circle"></i> Custom solar array design and optimization</li>
+                            <li><i class="fas fa-check-circle"></i> Advanced aerodynamic body development</li>
+                            <li><i class="fas fa-check-circle"></i> Energy-efficient electrical systems</li>
+                            <li><i class="fas fa-check-circle"></i> Lightweight composite materials research</li>
+                        </ul>
+                        <a href="projects.html" class="btn btn-primary">View Our Projects</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Stats Counter Section (New) -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item fade-in-section">
+                        <div class="stat-icon"><i class="fas fa-users"></i></div>
+                        <div class="stat-count" data-count="30">0</div>
+                        <div class="stat-label">Team Members</div>
+                    </div>
+                    
+                    <div class="stat-item fade-in-section">
+                        <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+                        <div class="stat-count" data-count="5">0</div>
+                        <div class="stat-label">Competitions</div>
+                    </div>
+                    
+                    <div class="stat-item fade-in-section">
+                        <div class="stat-icon"><i class="fas fa-road"></i></div>
+                        <div class="stat-count" data-count="2500">0</div>
+                        <div class="stat-label">Miles Driven</div>
+                    </div>
+                    
+                    <div class="stat-item fade-in-section">
+                        <div class="stat-icon"><i class="fas fa-handshake"></i></div>
+                        <div class="stat-count" data-count="15">0</div>
+                        <div class="stat-label">Sponsors</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Make an Impact?</h2>
+                <p>Join our team and help us shape the future of sustainable transportation. We're looking for passionate individuals from all disciplines.</p>
+                <div class="cta-buttons">
+                    <a href="join.html" class="btn btn-accent">Join Our Team</a>
+                    <a href="sponsors.html" class="btn btn-outline">Become a Sponsor</a>
                 </div>
             </div>
         </section>
@@ -158,10 +289,37 @@
                     <p>Driven by Curiosity, Powered by the Sun.</p>
                 </div>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Get Involved</h4>
+                    <ul>
+                        <li><a href="join.html">Join Our Team</a></li>
+                        <li><a href="sponsors.html">Sponsor Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe to our newsletter for the latest updates</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-accent">Subscribe</button>
+                    </form>
                 </div>
             </div>
             <div class="copyright">
@@ -170,9 +328,60 @@
         </div>
     </footer>
 
+    <!-- Back to top button -->
+    <a href="#home" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
     <!--Shared JavaScript-->
     <script src="js/main.js"></script>
     <!--Page specific JavaScript-->
     <script src="js/home.js"></script>
+    <!-- Additional JavaScript for the new elements -->
+    <script>
+        // Counter animation for stats section
+        document.addEventListener('DOMContentLoaded', function() {
+            const statCounters = document.querySelectorAll('.stat-count');
+            
+            const observeStats = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = parseInt(entry.target.getAttribute('data-count'));
+                        let count = 0;
+                        const duration = 2000; // 2 seconds
+                        const increment = Math.ceil(target / (duration / 16));
+                        
+                        const timer = setInterval(() => {
+                            count += increment;
+                            if (count >= target) {
+                                count = target;
+                                clearInterval(timer);
+                            }
+                            entry.target.textContent = count.toLocaleString();
+                        }, 16);
+                        
+                        observeStats.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            statCounters.forEach(counter => {
+                observeStats.observe(counter);
+            });
+            
+            // Back to top button visibility
+            const backToTopButton = document.querySelector('.back-to-top');
+            
+            if (backToTopButton) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 300) {
+                        backToTopButton.classList.add('visible');
+                    } else {
+                        backToTopButton.classList.remove('visible');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>

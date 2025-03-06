@@ -1,32 +1,54 @@
 /* 
-Styling for about page
+Enhanced styling for about page with animations and visual elements
 */
 
-/* Page Banner */
+/* Page Banner with Gradient Overlay */
 .page-banner {
-    background-color: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
     color: white;
-    padding: 120px 0 60px;
+    padding: 140px 0 80px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add animated background pattern */
+.page-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.08' fill-rule='evenodd'/%3E%3C/svg%3E");
+    opacity: 0.6;
+    z-index: 0;
 }
 
 .page-banner h1 {
     font-size: var(--font-xl);
     margin-bottom: var(--spacing-sm);
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .page-banner p {
     font-size: var(--font-md);
     max-width: 700px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Section Content Layout */
+/* Enhanced Section Content Layout */
 .section-content {
     display: flex;
     align-items: center;
     gap: var(--spacing-lg);
     padding: var(--spacing-xl) 0;
+    position: relative;
 }
 
 .section-content.reverse {
@@ -35,51 +57,157 @@ Styling for about page
 
 .text-content, .image-content {
     flex: 1;
+    position: relative;
+}
+
+/* Add decorative element to text content */
+.text-content::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--primary-light);
+    border-radius: 8px;
+    top: -20px;
+    left: -20px;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+.text-content .section-title {
+    text-align: left;
+    padding-bottom: var(--spacing-sm);
+}
+
+.text-content .section-title::after {
+    left: 0;
+    transform: none;
+}
+
+.section-content.reverse .text-content .section-title {
+    text-align: right;
+}
+
+.section-content.reverse .text-content .section-title::after {
+    left: auto;
+    right: 0;
+}
+
+.section-content.reverse .text-content::before {
+    left: auto;
+    right: -20px;
+}
+
+/* Enhanced Image Styling */
+.image-content {
+    position: relative;
+    z-index: 1;
 }
 
 .image-content img {
     width: 100%;
     height: auto;
     border-radius: var(--border-radius-md);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    transition: all 0.5s ease;
+    transform: perspective(1000px) rotateY(0deg);
 }
 
-/* Mission Section */
+.image-content:hover img {
+    transform: perspective(1000px) rotateY(5deg);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+}
+
+/* Decorative elements for image */
+.image-content::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 3px solid var(--accent-color);
+    border-radius: var(--border-radius-md);
+    top: 20px;
+    left: 20px;
+    z-index: -1;
+    opacity: 0.5;
+    transition: all 0.5s ease;
+}
+
+.image-content:hover::before {
+    top: 15px;
+    left: 15px;
+}
+
+/* Section-specific styling */
 .mission-section {
     background-color: var(--background-white);
     padding: var(--spacing-xl) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.mission-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, var(--primary-light) 0%, transparent 70%);
+    opacity: 0.3;
+    z-index: 0;
+    border-radius: 50%;
 }
 
 .mission-section .section-content {
     padding: 0;
     justify-content: center;
+    position: relative;
+    z-index: 1;
 }
 
 .mission-section .text-content {
     max-width: 800px;
 }
 
-/* Vision Section */
+/* Vision Section with Accent Background */
 .vision-section {
-    background-color: var(--background-light);
+    background: linear-gradient(135deg, var(--background-light) 0%, rgba(255, 213, 79, 0.1) 100%);
     padding: var(--spacing-xl) 0;
+    position: relative;
+    overflow: hidden;
 }
 
-/* History Section */
+.vision-section::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, var(--primary-light) 0%, transparent 70%);
+    opacity: 0.3;
+    z-index: 0;
+    border-radius: 50%;
+}
+
+/* History Section Styling */
 .history-section {
     background-color: var(--background-white);
     padding: var(--spacing-xl) 0;
+    position: relative;
 }
 
-/* Timeline Section */
+/* Enhanced Timeline Section */
 .timeline-section {
-    background-color: var(--background-light);
+    background: linear-gradient(135deg, rgba(255, 213, 79, 0.1) 0%, var(--background-light) 100%);
     padding: var(--spacing-xl) 0;
+    position: relative;
 }
 
 .timeline {
     position: relative;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     padding: var(--spacing-lg) 0;
 }
@@ -89,10 +217,11 @@ Styling for about page
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 4px;
-    background-color: var(--primary-color);
+    width: 6px;
+    background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
     left: 50%;
     transform: translateX(-50%);
+    border-radius: 3px;
 }
 
 .timeline-item {
@@ -100,10 +229,23 @@ Styling for about page
     position: relative;
     width: 50%;
     left: 0;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.6s ease;
+}
+
+.timeline-item.animated {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .timeline-item:nth-child(even) {
     left: 50%;
+    transform: translateX(50px);
+}
+
+.timeline-item:nth-child(even).animated {
+    transform: translateX(0);
 }
 
 .timeline-content {
@@ -111,8 +253,14 @@ Styling for about page
     padding: var(--spacing-md);
     background-color: var(--background-white);
     border-radius: var(--border-radius-md);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    width: 80%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 85%;
+    transition: all 0.4s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
 .timeline-item:nth-child(odd) .timeline-content {
@@ -127,31 +275,73 @@ Styling for about page
 .timeline-content::before {
     content: '';
     position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: var(--primary-color);
+    width: 25px;
+    height: 25px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
     border-radius: 50%;
     top: 50%;
     transform: translateY(-50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
 
 .timeline-item:nth-child(odd) .timeline-content::before {
-    right: -40px;
+    right: -45px;
 }
 
 .timeline-item:nth-child(even) .timeline-content::before {
-    left: -40px;
+    left: -45px;
+}
+
+/* Add arrow pointing to timeline */
+.timeline-content::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 10px solid transparent;
+}
+
+.timeline-item:nth-child(odd) .timeline-content::after {
+    right: -20px;
+    border-left-color: var(--background-white);
+}
+
+.timeline-item:nth-child(even) .timeline-content::after {
+    left: -20px;
+    border-right-color: var(--background-white);
 }
 
 .timeline-content h3 {
     margin-bottom: var(--spacing-xs);
     color: var(--primary-color);
+    font-size: 1.5rem;
 }
 
-/* Achievements Section */
+.timeline-content p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Achievements Section with Card Animation */
 .achievements-section {
     background-color: var(--background-white);
     padding: var(--spacing-xl) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background embellishment */
+.achievements-section::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, var(--accent-light) 0%, transparent 70%);
+    opacity: 0.5;
+    z-index: 0;
 }
 
 .achievements-grid {
@@ -159,6 +349,8 @@ Styling for about page
     grid-template-columns: repeat(4, 1fr);
     gap: var(--spacing-md);
     margin-top: var(--spacing-lg);
+    position: relative;
+    z-index: 1;
 }
 
 .achievement-card {
@@ -166,65 +358,224 @@ Styling for about page
     padding: var(--spacing-md);
     background-color: var(--background-light);
     border-radius: var(--border-radius-md);
-    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    transition: all 0.5s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.07);
+    border: 2px solid transparent;
+    height: 100%;
+}
+
+.achievement-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent-light) 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: -1;
 }
 
 .achievement-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
+}
+
+.achievement-card:hover::before {
+    opacity: 0.1;
 }
 
 .achievement-icon {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: var(--primary-color);
     margin-bottom: var(--spacing-sm);
+    transition: all 0.5s ease;
+}
+
+.achievement-card:hover .achievement-icon {
+    transform: scale(1.2);
+    color: var(--accent-color);
 }
 
 .achievement-card h3 {
     margin-bottom: var(--spacing-xs);
+    font-size: 1.3rem;
+    position: relative;
+    padding-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.achievement-card:hover h3 {
+    color: var(--primary-dark);
+}
+
+.achievement-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.achievement-card:hover h3::after {
+    width: 50px;
 }
 
 .achievement-card p {
     color: var(--text-light);
+    font-size: var(--font-sm);
 }
 
-/* CTA Section */
+/* Enhanced CTA Section */
 .cta-section {
-    background-color: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
     color: white;
     padding: var(--spacing-xl) 0;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add decorative background elements */
+.cta-section::before, .cta-section::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 0;
+}
+
+.cta-section::before {
+    top: -150px;
+    left: -150px;
+}
+
+.cta-section::after {
+    bottom: -150px;
+    right: -150px;
+}
+
+.cta-section .container {
+    position: relative;
+    z-index: 1;
 }
 
 .cta-section h2 {
     font-size: var(--font-lg);
     margin-bottom: var(--spacing-sm);
+    position: relative;
+    display: inline-block;
+}
+
+.cta-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 3px;
 }
 
 .cta-section p {
     max-width: 600px;
     margin: 0 auto var(--spacing-lg);
+    font-size: calc(var(--font-md) - 0.2rem);
 }
 
 .cta-section .btn {
+    background-color: var(--accent-color);
+    color: var(--text-dark);
+    font-weight: 700;
+    border: 2px solid var(--accent-color);
+    padding: 1rem 2.5rem;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.cta-section .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
     background-color: white;
-    color: var(--primary-color);
+    transition: width 0.4s ease;
+    z-index: -1;
 }
 
 .cta-section .btn:hover {
-    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--primary-dark);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* Animation for fade-in sections */
+.cta-section .btn:hover::before {
+    width: 100%;
+}
+
+/* Enhanced Animation for Sections */
 .fade-in-section {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    will-change: opacity, transform;
 }
 
 .fade-in-section.is-visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Scroll Animations for Timeline and Achievement Cards */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Responsive Styles */
@@ -235,6 +586,40 @@ Styling for about page
     
     .section-content.reverse {
         flex-direction: column;
+    }
+    
+    .text-content, .image-content {
+        width: 100%;
+    }
+    
+    .text-content {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .text-content .section-title {
+        text-align: center;
+    }
+    
+    .text-content .section-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .section-content.reverse .text-content .section-title {
+        text-align: center;
+    }
+    
+    .section-content.reverse .text-content .section-title::after {
+        left: 50%;
+        right: auto;
+    }
+    
+    .image-content::before {
+        display: none;
+    }
+    
+    .text-content::before {
+        display: none;
     }
     
     .achievements-grid {
@@ -265,11 +650,45 @@ Styling for about page
     .timeline-item:nth-child(odd) .timeline-content::before,
     .timeline-item:nth-child(even) .timeline-content::before {
         left: -40px;
+        right: auto;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content::after,
+    .timeline-item:nth-child(even) .timeline-content::after {
+        left: -20px;
+        right: auto;
+        border-right-color: var(--background-white);
+        border-left-color: transparent;
+    }
+    
+    .timeline-item {
+        transform: translateX(-30px);
+    }
+    
+    .timeline-item:nth-child(even) {
+        transform: translateX(-30px);
+    }
+    
+    .timeline-item.animated,
+    .timeline-item:nth-child(even).animated {
+        transform: translateX(0);
     }
 }
 
 @media (max-width: 576px) {
     .achievements-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .timeline-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .page-banner h1 {
+        font-size: 2.5rem;
+    }
+    
+    .page-banner p {
+        font-size: 1.1rem;
     }
 }
